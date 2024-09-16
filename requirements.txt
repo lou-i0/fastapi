@@ -1,6 +1,5 @@
 fastapi
 pydantic
-pickle
 duckdb
 pandas
 uvicorn
