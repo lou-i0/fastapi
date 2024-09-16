@@ -3,3 +3,4 @@ pydantic
 pickle
 duckdb
 pandas
+uvicorn
