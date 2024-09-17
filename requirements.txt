@@ -3,3 +3,4 @@ pydantic
 duckdb
 pandas
 uvicorn
+duckdb
