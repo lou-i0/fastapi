@@ -5,6 +5,7 @@ from fastapi import HTTPException   # Set own HTTP error calls
 from enum import Enum
 from pydantic import BaseModel, Field      # Data Validation
 from fastapi import Cookie, Header              #for cookie settings
+import uvicorn
 
 
 #%% Set the Model instance and needed attributes
@@ -96,3 +97,6 @@ async def read_db(skip: int = 0, limit: int = 10):
 @app.put("/db/")
 async def add_db_entry(db_entry:DBItem):
     return {"DBItem":DBItem}
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)

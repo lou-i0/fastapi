@@ -64,7 +64,8 @@ async def get_tit_data(records = records):
     return  Response(content=str(result), media_type='application/json')
     #return {"result": result}
     
-
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=8000)
 
 
 
