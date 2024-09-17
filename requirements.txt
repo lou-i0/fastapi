@@ -1,7 +1,0 @@
-fastapi
-pydantic
-duckdb
-pandas
-uvicorn
-duckdb
-streamlit
