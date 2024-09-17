@@ -12,4 +12,4 @@ I plan on providing a couple of examples in the hopes it helps someone (and myse
 2. An example to provide results from a DuckDB Query as an output [duckdb Example](main_duckdb.py)
 3. Example using a Machine learning Dataset and model (simple example like titanic dataset) [First stage- build the model(s)](main_ml1.ipynb) and [Second Stage - show prediction on API](main_ml2.py)
 4. Host the API via a front end like Streamlit ? (Not started)
-5. Find a way to containerise a solutions via a virtual environment and Docker. (Not started)
+5. Find a way to containerise a solutions via a virtual environment and Docker. (Done)
