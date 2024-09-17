@@ -3,6 +3,8 @@
 from fastapi import FastAPI         # Create the API for our end user(s)
 from fastapi import HTTPException   # Set own HTTP error calls 
 from enum import Enum
+from pydantic import BaseModel, Field      # Data Validation
+from fastapi import Cookie, Header              #for cookie settings
 
 
 #%% Set the Model instance and needed attributes
@@ -15,6 +17,13 @@ class MLModel(str, Enum):
 #%% file path for text file to see in API
 #=================================
 file_path = "example.txt"
+
+# list of dicts to return input?
+#=================================
+fake_items_db = [{"item_name": "Foo"}, {"item_name" : "Bar"}, {"item_name": "Baz"}]
+
+class DBItem (BaseModel):
+    item_name : str
 
 #%% Create the API
 #==================================
@@ -74,3 +83,16 @@ async def get_file():
 async def read_file(file_path: str):
     return {"file_path":file_path}
 
+
+# to return iitems from fake db?
+#----------------------------------
+@app.get("/db/")
+async def read_db(skip: int = 0, limit: int = 10):
+    return fake_items_db[skip: skip + limit]
+'''http://127.0.0.1:8000/db/?skip=1&limit=10'''
+
+# Add itme in fake db?
+#----------------------------------
+@app.put("/db/")
+async def add_db_entry(db_entry:DBItem):
+    return {"DBItem":DBItem}
