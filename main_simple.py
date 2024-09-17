@@ -98,5 +98,5 @@ async def read_db(skip: int = 0, limit: int = 10):
 async def add_db_entry(db_entry:DBItem):
     return {"DBItem":DBItem}
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='127.0.0.1', port=8000)
